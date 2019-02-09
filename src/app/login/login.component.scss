@@ -1,0 +1,27 @@
+.login-card {
+    max-width: 600px;
+    margin: 20px auto
+}
+
+.login-form {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.login-column {
+    flex-direction: column;
+    display: flex;
+    margin: 0 30px;
+    width: inherit;
+}
+
+.login-form-item {
+    max-width: 700px;
+}
+
+.login-actions {
+    display: flex;
+    justify-content: flex-end;
+}
