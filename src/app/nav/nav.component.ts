@@ -1,5 +1,5 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -11,7 +11,7 @@ import { LoginService } from '../shared/login.service';
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.scss']
 })
-export class NavComponent implements OnInit {
+export class NavComponent implements OnInit, OnDestroy {
 
   isLoggedInSubscription: Subscription;
   isLoggedIn = false;
@@ -25,6 +25,10 @@ export class NavComponent implements OnInit {
 
   ngOnInit() {
     this.isLoggedInSubscription = this.loginService.isLoggedIn.subscribe(data => this.isLoggedIn = data);
+  }
+
+  ngOnDestroy() {
+    this.isLoggedInSubscription.unsubscribe();
   }
 
   logout() {
