@@ -21,4 +21,8 @@ export class LoginService {
       }
     });
   }
+
+  logout() {
+    this.isLoggedIn.next(false);
+  }
 }

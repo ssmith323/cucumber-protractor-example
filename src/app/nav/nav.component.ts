@@ -26,4 +26,8 @@ export class NavComponent implements OnInit {
     this.isLoggedInSubscription = this.loginService.isLoggedIn.subscribe(data => this.isLoggedIn = data);
   }
 
+  logout() {
+    this.loginService.logout();
+  }
+
 }
