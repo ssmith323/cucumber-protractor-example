@@ -7,7 +7,7 @@ Feature: Go to the home
     And click the login button
     Then I should be logged in
 
-Scenario: Login Page
+  Scenario: Login Page
     Given I am on the login page
     When I enter my incorrect username and password
     And click the login button

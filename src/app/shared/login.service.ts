@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 import { LoginInfo } from './models/login-info';
 
@@ -7,7 +7,7 @@ import { LoginInfo } from './models/login-info';
   providedIn: 'root'
 })
 export class LoginService {
-  isLoggedIn = new Subject<boolean>();
+  isLoggedIn = new BehaviorSubject<boolean>(false);
 
   constructor() { }
 
