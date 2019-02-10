@@ -1,5 +1,6 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -20,7 +21,7 @@ export class NavComponent implements OnInit {
       map(result => result.matches)
     );
 
-  constructor(private breakpointObserver: BreakpointObserver, private loginService: LoginService) { }
+  constructor(private breakpointObserver: BreakpointObserver, private loginService: LoginService, private router: Router) { }
 
   ngOnInit() {
     this.isLoggedInSubscription = this.loginService.isLoggedIn.subscribe(data => this.isLoggedIn = data);
@@ -28,6 +29,7 @@ export class NavComponent implements OnInit {
 
   logout() {
     this.loginService.logout();
+    this.router.navigate(['/login']);
   }
 
 }
