@@ -13,7 +13,6 @@
 .login-column {
     flex-direction: column;
     display: flex;
-    margin: 0 30px;
     width: inherit;
 }
 
@@ -28,4 +27,8 @@
 
 .error-text {
     color: red;
+}
+
+mat-progress-spinner {
+    height: 30px;
 }

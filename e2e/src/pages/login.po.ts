@@ -23,4 +23,8 @@ export class LoginPage {
   getTitleText() {
     return element(by.css('h1.page-header')).getText();
   }
+
+  getLoginCard(): any {
+    return element(by.css('.login-card'));
+  }
 }

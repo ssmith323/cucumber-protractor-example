@@ -1,8 +1,8 @@
 <mat-card class="login-card">
   <form [formGroup]="loginForm" (submit)="loginUser()">
-    <mat-card-header>
+    <mat-card-title>
       Login
-    </mat-card-header>
+    </mat-card-title>
     <mat-card-content class="login-form">
       <div class="login-column">
         <mat-form-field class="login-form-item">
@@ -19,9 +19,10 @@
       </div>
     </mat-card-content>
     <mat-card-actions class="login-actions">
-      <button *ngIf="!isSubmitted" id="submit" mat-flat-button [disabled]="loginForm.invalid" color="primary" type="submit">Login</button>
-      <mat-progress-spinner *ngIf="isSubmitted" color="secondary" mode="indeterminate">
-      </mat-progress-spinner>
+      <button *ngIf="!isSubmitted" id="submit" mat-flat-button [disabled]="loginForm.invalid" color="primary"
+        type="submit">Login</button>
+      <mat-spinner *ngIf="isSubmitted" color="secondary" diameter="40">
+      </mat-spinner>
     </mat-card-actions>
   </form>
 </mat-card>
