@@ -29,9 +29,9 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'cumcumber-protractor-exmaple'`, () => {
+  it(`should have as title 'cucumber-protractor-exmaple'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('cumcumber-protractor-exmaple');
+    expect(app.title).toEqual('cucumber-protractor-exmaple');
   });
 });

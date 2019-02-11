@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "cumcumber-protractor-exmaple": {
+    "cucumber-protractor-exmaple": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/cumcumber-protractor-exmaple",
+            "outputPath": "dist/cucumber-protractor-exmaple",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "cumcumber-protractor-exmaple:build"
+            "browserTarget": "cucumber-protractor-exmaple:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "cumcumber-protractor-exmaple:build:production"
+              "browserTarget": "cucumber-protractor-exmaple:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "cumcumber-protractor-exmaple:build"
+            "browserTarget": "cucumber-protractor-exmaple:build"
           }
         },
         "test": {
@@ -108,7 +108,7 @@
         }
       }
     },
-    "cumcumber-protractor-exmaple-e2e": {
+    "cucumber-protractor-exmaple-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -117,11 +117,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "cumcumber-protractor-exmaple:serve"
+            "devServerTarget": "cucumber-protractor-exmaple:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "cumcumber-protractor-exmaple:serve:production"
+              "devServerTarget": "cucumber-protractor-exmaple:serve:production"
             }
           }
         },
@@ -137,5 +137,5 @@
       }
     }
   },
-  "defaultProject": "cumcumber-protractor-exmaple"
+  "defaultProject": "cucumber-protractor-exmaple"
 }
