@@ -29,7 +29,7 @@ We need to modify the types value with the below value.  The will allow the cucu
     ]
 ```
 
-## Update protractor.conf
+## Update e2e/protractor.conf.js
 We have a few updates to be made in this file.  The first is change the spec file to use the below option to find our feature files.
 
 ```
