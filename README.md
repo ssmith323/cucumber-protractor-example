@@ -1,27 +1,53 @@
-# CumcumberProtractorExmaple
+# AngularCLI with Cucumber
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.1.
 
-## Development server
+## Packages Needed
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+To get everything running first add the following packages
+* @types/chai
+* @types/cucumber
+* chai
+* cucumber
+* protractor-cucumber-framework
 
-## Code scaffolding
+You can install them with the command below 
+```
+npm i -D @types/chai @types/cucumber chai cucumber protractor-cucumber-framework
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+I'm using -D here to install everything as a dev dependency and keep the package JSON cleaned up.  Cucumber does not come with an asseration library so we are using chai here (need to test out jasmine still)
 
-## Build
+## Update e2e/tsconfig.e2e.json
+We need to modify the types value with the below value.  The will allow the cucumber and chai functions to be used in our applications
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```
+    "types": [
+      "chai",
+      "cucumber",
+      "node"
+    ]
+```
 
-## Running unit tests
+## Update protractor.conf
+We have a few updates to be made in this file.  The first is change the spec file to use the below option to find our feature files.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```
+  specs: [
+    './src/features/**/*.feature'
+  ],
+  ```
+Next, we need to declare that we are using the cucumber framework and specify where the steps are located.  Copy and pasted the below code to replace the framework already declared
 
-## Running end-to-end tests
+```
+ framework: 'custom',
+frameworkPath: require.resolve('protractor-cucumber-framework'),
+cucumberOpts: {
+  require: ['./src/steps/**/*.steps.ts'],
+},
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Now remove all references to jasmine in the file.
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Run
+Now that all the setup work is done, we can run ng e2e to run our functional tests.
