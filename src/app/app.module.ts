@@ -9,13 +9,17 @@ import { CoreModule } from './core/core.module';
 import { LoginComponent } from './login/login.component';
 import { NavComponent } from './nav/nav.component';
 import { MyAccountComponent } from './my-account/my-account.component';
+import { AddressCardComponent } from './my-account/address-card/address-card.component';
+import { LoginCardComponent } from './my-account/login-card/login-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     LoginComponent,
-    MyAccountComponent
+    MyAccountComponent,
+    AddressCardComponent,
+    LoginCardComponent
   ],
   imports: [
     BrowserModule,

@@ -7,14 +7,17 @@ import { LoginInfo } from './models/login-info';
   providedIn: 'root'
 })
 export class LoginService {
-  isLoggedIn = new BehaviorSubject<boolean>(false);
+  isLoggedIn: BehaviorSubject<boolean>;
 
-  constructor() { }
+  constructor() {
+    this.isLoggedIn = new BehaviorSubject<boolean>(!!localStorage.getItem('login'));
+  }
 
   login(login: LoginInfo): Promise<any> {
     return new Promise((resolve, reject) => {
       if (login.username === 'test.user' && login.password === 'password') {
         setTimeout(resolve, 0, 'promise worked');
+        localStorage.setItem('login', 'true');
         this.isLoggedIn.next(true);
       } else {
         setTimeout(reject, 1500, 'rejected');
@@ -24,5 +27,6 @@ export class LoginService {
 
   logout() {
     this.isLoggedIn.next(false);
+    localStorage.removeItem('login');
   }
 }
