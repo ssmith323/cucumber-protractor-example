@@ -25,6 +25,6 @@ export class LoginPage {
   }
 
   async getLoginCard() {
-    return await element(by.css('.login-cafrd'));
+    return await element(by.css('.login-card'));
   }
 }

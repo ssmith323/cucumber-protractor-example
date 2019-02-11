@@ -21,7 +21,8 @@ When(/^I navigate to My Account$/, async () => {
 });
 
 Then(/^I should be taken to the login page$/, async () => {
-  expect(!!(await loginPage.getLoginCard())).to.equal(true);
+  const ele = await loginPage.getLoginCard();
+  expect(!!(ele.isPresent())).to.equal(true);
 });
 
 
