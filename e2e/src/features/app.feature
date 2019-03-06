@@ -1,7 +1,14 @@
 Feature: Go to the home
   Display the title
 
-  Scenario: Home Page
+  Scenario Outline: Home Page
     Given I am on the home page
-    When I do nothing
-    Then I should see the title
+    Given I do nothing
+    Given I should see the title
+# "<title>"
+# Examples:
+#   | title   |
+#   | Value 1 |
+#   | Value 2 |
+#   | Value 3 |
+

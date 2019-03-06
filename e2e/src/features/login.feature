@@ -1,5 +1,7 @@
 Feature: Go to the home
-  Login
+  As a user
+  I want to view the login page
+  So that I can login
 
   Scenario: Login Page
     Given I am on the login page

@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { Before, Given, Then, When } from 'cucumber';
+import { Before, Then, When } from 'cucumber';
 
 import { LoginPage } from '../pages/login.po';
 import { MyAccountPage } from '../pages/my-account.po';
@@ -12,10 +12,6 @@ Before(() => {
   loginPage = new LoginPage();
 });
 
-Given(/^I am not logged in$/, async () => {
-  // do nothing
-});
-
 When(/^I navigate to My Account$/, async () => {
   await page.navigateTo();
 });
@@ -25,4 +21,14 @@ Then(/^I should be taken to the login page$/, async () => {
   expect(!!(ele.isPresent())).to.equal(true);
 });
 
+When(/^It loads$/, async () => {
+  // do nothing
+});
 
+Then('The header should display', async () => {
+  expect(await page.getTitle()).to.equal('My Account');
+});
+
+Then('The field {string} should display {string}', async (field: string, value: string) => {
+  expect(await page.getField(field)).to.equal(value);
+});
