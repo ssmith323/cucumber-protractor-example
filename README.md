@@ -16,7 +16,7 @@ You can install them with the command below
 npm i -D @types/chai @types/cucumber chai cucumber protractor-cucumber-framework
 ```
 
-I'm using -D here to install everything as a dev dependency and keep the package JSON cleaned up.  Cucumber does not come with an asseration library so we are using chai here (need to test out jasmine still)
+I'm using -D here to install everything as a dev dependency and keep the package JSON cleaned up.  Cucumber does not come with an asseration library so we are using chai here
 
 ## Update e2e/tsconfig.e2e.json
 We need to modify the types value with the below value.  The will allow the cucumber and chai functions to be used in our applications
