@@ -8,13 +8,11 @@ Feature: My Account Page
     And click the login button
 
   Scenario: Authenenticated
-    Given I navigate to My Account
-    When It loads
+    When I navigate to My Account
     Then The header should display
 
   Scenario Outline: Diplay Fields
-    Given I navigate to My Account
-    When It loads
+    When I navigate to My Account
     Then The field "<field>" should display "<value>"
 
     Examples:

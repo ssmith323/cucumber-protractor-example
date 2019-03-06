@@ -21,10 +21,6 @@ Then(/^I should be taken to the login page$/, async () => {
   expect(!!(ele.isPresent())).to.equal(true);
 });
 
-When(/^It loads$/, async () => {
-  // do nothing
-});
-
 Then('The header should display', async () => {
   expect(await page.getTitle()).to.equal('My Account');
 });
