@@ -3,9 +3,7 @@ Feature: My Account Page
 
 
   Background: Background name
-    Given I am on the login page
-    When I enter my correct username and password
-    And click the login button
+    Given I am logged in
 
   Scenario: Authenenticated
     When I navigate to My Account

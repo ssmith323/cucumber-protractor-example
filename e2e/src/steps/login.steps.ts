@@ -35,4 +35,11 @@ Then(/^I should not be logged in$/, { timeout: 2 * 5000 }, async () => {
   expect(await page.getErrorText()).to.equal('Invalid username and password combination!');
 });
 
+Given(/^I am logged in$/, { timeout: 2 * 5000 }, async () => {
+  await page.navigateTo();
+  await page.setUserName('test.user');
+  await page.setPassword('password');
+  await page.clickLogin();
+});
+
 
