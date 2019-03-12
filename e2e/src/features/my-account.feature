@@ -5,7 +5,7 @@ Feature: My Account Page
   Background: Background name
     Given I am logged in
 
-  Scenario: Authenenticated
+  Scenario: Page should have a title
     When I navigate to My Account
     Then The header should display
 
