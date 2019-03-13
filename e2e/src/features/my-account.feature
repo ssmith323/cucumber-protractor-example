@@ -4,16 +4,16 @@ Feature: My Account Page
 
   Background: Background name
     Given I am logged in
+    And I am on the "My Account" page
 
   Scenario: Page should have a title
-    When I navigate to My Account
     Then The header should display
 
   Scenario Outline: Diplay Fields
-    When I navigate to My Account
     Then The field "<field>" should display "<value>"
 
     Examples:
       | field | value     |
       | name  | ssmith323 |
       | age   | 5         |
+

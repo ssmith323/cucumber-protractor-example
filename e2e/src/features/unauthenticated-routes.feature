@@ -3,5 +3,5 @@ Feature: My Account Page
 
   Scenario: Unauthenticated
     Given I am not logged in
-    When I navigate to My Account
+    When I am on the "My Account" page
     Then I should be taken to the login page

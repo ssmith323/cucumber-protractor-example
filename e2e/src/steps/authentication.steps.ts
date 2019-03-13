@@ -13,13 +13,24 @@ Given(/^I am on the login page$/, { timeout: 2 * 5000 }, async () => {
   await page.navigateTo();
 });
 
-When(/^I enter my correct username and password$/, { timeout: 2 * 5000 }, async () => {
+Given(/^I am not logged in$/, async () => {
+  // do nothing
+});
+
+
+When(/^I enter my correct username$/, { timeout: 2 * 5000 }, async () => {
   await page.setUserName('test.user');
+});
+
+When(/^I enter my correct password$/, { timeout: 2 * 5000 }, async () => {
   await page.setPassword('password');
 });
 
-When(/^I enter my incorrect username and password$/, { timeout: 2 * 5000 }, async () => {
+When(/^I enter my incorrect username$/, { timeout: 2 * 5000 }, async () => {
   await page.setUserName('test.user2');
+});
+
+When(/^I enter my incorrect password$/, { timeout: 2 * 5000 }, async () => {
   await page.setPassword('password');
 });
 
