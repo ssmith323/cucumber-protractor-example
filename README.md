@@ -2,6 +2,15 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.1.
 
+- [AngularCLI with Cucumber](#angularcli-with-cucumber)
+  - [Packages Needed](#packages-needed)
+  - [Update e2e/tsconfig.e2e.json](#update-e2etsconfige2ejson)
+  - [Update e2e/protractor.conf.js](#update-e2eprotractorconfjs)
+  - [Run](#run)
+  - [Accessiblity Testing](#accessiblity-testing)
+    - [NPM Packages](#npm-packages)
+    - [Modify Protractor Configuration](#modify-protractor-configuration)
+
 ## Packages Needed
 
 To get everything running first add the following packages
@@ -21,7 +30,7 @@ I'm using -D here to install everything as a dev dependency and keep the package
 ## Update e2e/tsconfig.e2e.json
 We need to modify the types value with the below value.  The will allow the cucumber and chai functions to be used in our applications
 
-```
+```javascript
     "types": [
       "chai",
       "cucumber",
@@ -32,7 +41,7 @@ We need to modify the types value with the below value.  The will allow the cucu
 ## Update e2e/protractor.conf.js
 We have a few updates to be made in this file.  The first is change the spec file to use the below option to find our feature files.
 
-```
+```javascript
   specs: [
     './src/features/**/*.feature'
   ],
@@ -42,7 +51,7 @@ For this we project, we are going tp ut all feature files in a folder called fea
 
 Next, we need to declare that we are using the cucumber framework and specify where the steps are located.  Copy and pasted the below code to replace the framework already declared
 
-```
+```javascript
 framework: 'custom',
 frameworkPath: require.resolve('protractor-cucumber-framework'),
 cucumberOpts: {
@@ -56,3 +65,24 @@ Now remove all references to jasmine in the file.
 
 ## Run
 Now that all the setup work is done, we can run ng e2e to run our functional tests.
+
+## Accessiblity Testing
+
+### NPM Packages
+
+Run the following command to add the package as a dev dependency:
+
+```bash
+npm i protractor-accessibility-plugin -D
+```
+
+### Modify Protractor Configuration
+
+Add the following
+
+```javascript
+ plugins: [{
+        axe: true,
+        package: 'protractor-accessibility-plugin'
+      }]
+```
